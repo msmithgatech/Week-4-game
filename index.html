@@ -4,9 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Homework WK 4 Crystal Game</title>
+      <!-- Added link to the jQuery library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Added a link to Bootstrap-->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+
+    function getRandomInt(min, max) {
+        gameRan = 
+           Math.floor(Math.random() * (max - min + 1)) + min
+     }
+
 </head>
 <body>
+  
+          
+  <script type="text/javascript">
+  
+      // This document.ready isn't necessary in this example... but is needed in cases where the HTML is complex.
+      // This code makes sure that the JavaScript doesn't get run until the HTML is finished loading
+      // It's useful to become familiar with now.
     
+    <h1 id="matchran"
+        class="text-center" 
+        style="background-color: lightorange">
+    </h1>
+    
+    <btn id="btnA" 
+        src="assets/images/purpleCube.jpg">
+    </btn>
+
+    <btn id="btnB" 
+        src="assets/images/giantsCauseway.jpg">
+    </btn>
+
+    <btn id="btnC" 
+        src="assets/images/bubbleBall.jpg">
+    </btn>
+
+    <btn id="btnD" 
+        src="assets/images/orangePyramid.jpg">
+    </btn>
+    
+    $(document).ready( function() {
+        
+        var min = 19
+        var max = 120  
+        
+        var Aran = 0
+        var Bran = 0
+        var Cran = 0
+        var Dran = 0
+          
+            
+        // alert("#matchran").text(gameRan)
+    
+
+// ... we generate a random number
+// ... then dump the random number into our random-number div. 
+
+//  alert("Mmm... Peanut Butter Jelly Time.");
+//       pbjCounter++;
+//      alert("You've eaten " + pbjCounter + " PB&J sandwiches")
+
+       if wins > gameRan
+            alert(<p Your wins exceed the number to match></p>
+                  <p You Lose></p>)
+       else if ("document").on("click", "choiceA", function() {
+              wins = wins + Aran;
+       })
+       else if ("document").on("click", "choiceB", function() {
+              wins = wins + Bran;
+       });
+       else if ("document").on("click", "choiceC", function() {
+              wins = wins + Cran;
+       });    
+       else if ("document").on("click", "choiceD", function() {
+              wins = wins + Dran;
+       }) 
+              
+       
+               
+
+      
+      
+
+    });
+  </script>
 </body>
-</html>
+</html
