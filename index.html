@@ -5,94 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Homework WK 4 Crystal Game</title>
-      <!-- Added link to the jQuery library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--               -->
+    <!--  LOCAL LINKS  -->
+    <!--               -->
+    <!-- <script src="assets/javascript/game.js"></script> -->
+    <!-- <link href="assets/css/style.css" rel="stylesheet"></link> -->
+    
+    <!-- jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <!-- Added a link to Bootstrap-->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    <!-- Bootstrap-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-
-
-    function getRandomInt(min, max) {
-        gameRan = 
-           Math.floor(Math.random() * (max - min + 1)) + min
-     }
 
 </head>
 <body>
-  
-          
+            
   <script type="text/javascript">
-  
-      // This document.ready isn't necessary in this example... but is needed in cases where the HTML is complex.
-      // This code makes sure that the JavaScript doesn't get run until the HTML is finished loading
-      // It's useful to become familiar with now.
-    
-    <h1 id="matchran"
-        class="text-center" 
-        style="background-color: lightorange">
-    </h1>
-    
-    <btn id="btnA" 
-        src="assets/images/purpleCube.jpg">
-    </btn>
-
-    <btn id="btnB" 
-        src="assets/images/giantsCauseway.jpg">
-    </btn>
-
-    <btn id="btnC" 
-        src="assets/images/bubbleBall.jpg">
-    </btn>
-
-    <btn id="btnD" 
-        src="assets/images/orangePyramid.jpg">
-    </btn>
-    
     $(document).ready( function() {
+
+    //  HEADERS and BUTTONS
+
+    <h1 R A N D O M   C R Y S T A L S></h1>
+    <h3 The Number to Match ></h3>
+
+    <p id="prntMsg"></p>
+
+    <a class="crysFiles"
+        href="assets/images/purpleCube.jpg/"
+        href="assets/images/bubbleBall.jpg/"
+        href="assets/images/giantsCauseway.jpg/"
+        href="assets/images/orangePyramid.jpg/">
+    </a>
+       
+    <div id="crystlBtns">
+    </div>
+
+    <button id="choice"></button>
+    
+
+    //========================================= 
+    //      GLOBAL VARIABLES
+    //========================================= 
+      // TO CALCULATE THE GAMEs RANDOM NUMBERS    
+        var gmin = 20
+        var gmax = 120   
+        var gameRan = 0
+        // var $("#gameMatch").text(gameRan)
         
-        var min = 19
-        var max = 120  
-        
+      // FOR CALCULATING CRYSTAL RANDOM NUMBERS
         var Aran = 0
         var Bran = 0
         var Cran = 0
         var Dran = 0
-          
-            
-        // alert("#matchran").text(gameRan)
+      
+      // CRYSTAL ARRAY DEFAULT VALUES
+        var crystlRange = [0, 0, 0, 0]
+
+      // HOLDS USERs TOTAL
+        var userTot = 0
+         
+    //============================== 
+    //   CALLED FUNCTIONS
+    //==============================
     
+    function setGameRan(gmin, gmax) {
+        gameRan = Math.floor(Math.random() * (gmax - gmin + 1)) + gmax;
+        $("document").getElementbyID("#gameMatch")
+        $("document").write("#h1");
+        $("document").write("#h3")
+    }
 
-// ... we generate a random number
-// ... then dump the random number into our random-number div. 
+    function setCrysRan () {
+        var ranInt = 0  
+        for (var i = 0; i <= 4; i++) {
+            ranInt[i] = Math.floor(Math.random() * 10) + 1;
+            switch (ranInt[i]) {
+              case 0: 
+                 crystlRange[i] = parseFloat(ranInt[i]);
+                 Aran = crystlRange[i];
+                 $("#choice").id = $("<img>");
+                 $("#choice").addClass("class", "crystal-image", "choiceA" );
+                 $("#choice").attr("src", ".crysFiles[i]");
+                 $("#cryslBtns").append = ("#choice");
+                 ranInt = 0;
+                 break;
+              case 1: 
+                 crystlRange[i] = parseFloat(ranInt[i]);
+                 Bran = crystlRange[i];
+                 crystlBtns = $("<img>");
+                 crystlBtns.addClass("class", "crystal-image", "choiceB");
+                 crystlBtns.attr("src", ".crysFiles[i]");
+                 $("#cryslBtns").append;
+                 ranInt = 0;
+                 break;
+              case 2: 
+                 crystlRange[i] = parseFloat(ranInt[i]);
+                 Cran = crystlRange[i];
+                 crystlBtns = $("<img>");
+                 crystlBtns.addClass("class", "crystal-image", "choiceC");
+                 crystlBtns.attr("src", ".crysFiles[i]");
+                 $("#cryslBtns").append;
+                 ranInt = 0;
+                 break;
+              case 3:
+                 crystlRange[i] = parseFloat(ranInt[i]);
+                 Dran = crystlRange[i];
+                 crystlBtns = $("<img>");
+                 crystlBtns.addClass("class", "choicdeD");
+                 crystlBtns.attr("src", ".crysFiles[i]");
+                 $("#cryslBtns").append;
+                 ranInt = 0;
+                 break;
+              default:
+                 break
+            };  // END SWITCH    
+        };  //  END FOR LOOP
+    }  // END getCrysRandom
 
-//  alert("Mmm... Peanut Butter Jelly Time.");
-//       pbjCounter++;
-//      alert("You've eaten " + pbjCounter + " PB&J sandwiches")
+    function ovrLimit () {
+        $("document").write('#prntMsg').innerHTML =
+             <p Your choice exceeds the number to match></p>
+             + ".   "  + <p You Lose></p>
+    }
+     
+     function Nextgame () {
+       $('#crystlBtns').empty();
+       $("#choice").empty();
+       gameRan = 0;
+       userTot = 0;
+       Aran = 0;
+       Bran = 0;
+       Cran = 0;
+       Dran = 0;
+    }
 
-       if wins > gameRan
-            alert(<p Your wins exceed the number to match></p>
-                  <p You Lose></p>)
-       else if ("document").on("click", "choiceA", function() {
-              wins = wins + Aran;
-       })
-       else if ("document").on("click", "choiceB", function() {
-              wins = wins + Bran;
-       });
-       else if ("document").on("click", "choiceC", function() {
-              wins = wins + Cran;
-       });    
-       else if ("document").on("click", "choiceD", function() {
-              wins = wins + Dran;
-       }) 
-              
-       
-               
+//===========================================
+//     PROCESSING LOGIC
+//===========================================
 
-      
-      
-
-    });
-  </script>
+    //  GENERATE and DISPLAY the GAMEs NUMBER TO MATCH 
+    //  GENERATE THE CRYSTALs RANDOM NUMBER
+        $setGameRan ()
+        $setCrysRan()
+        
+        $("document").on("click"), function() {
+        if (userTot > gameRan) {
+          $ovrLimit ();
+          $Nextgame ();
+          return
+        }
+        else if (userTot = gameRan) {
+          $("document").write('#prntMsg').innerHTML =
+            <p Good guess you have matched></p>
+            + ".   "  + <p W I N N E R></p> + " !!!"
+          $Nextgame ()
+        }
+        else
+          switch ("#crystlBtn").hasClass { 
+            case ".choiceA":
+               userTot = userTot + Aran;
+               break;
+            case ".choiceB":
+               userTot = userTot + Bran;
+               break;
+            case class=(".choiceC"):
+               userTot = userTot + Cran;
+               break;
+            case ".choiceD":
+               userTot = userTot + Dran;
+               break;
+            default:
+               return
+        };  // END ELSE
+        };  // END ON CLICK 
+    </script>
 </body>
 </html
