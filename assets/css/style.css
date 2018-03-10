@@ -1,0 +1,29 @@
+body {
+    background-color: lightgrey;
+}
+
+h1 {
+    background-color: bisque;
+    border-style: solid;
+    border-bottom-style: outset;
+}
+
+h2 {
+    background-color: lightskyblue;
+    border-style: solid;
+    border-bottom-style: outset;
+}
+
+#crystalBtn {
+    border-style: ridge;
+    height: 200px;
+    width: 200px;
+    margin:  10px;       
+}
+
+#choice {
+    border-radius: 8px;
+    height: 150px;
+    width: 150px;
+    margin:  5px;
+}
